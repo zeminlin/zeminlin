@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  
+  <title><![CDATA[zemin's blog]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://zeminlin.github.io//"/>
+  <updated>2016-07-25T09:13:21.099Z</updated>
+  <id>http://zeminlin.github.io//</id>
+  
+  <author>
+    <name><![CDATA[zemin]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[基于shadowsocks的扩展以测试科学上网]]></title>
+    <link href="http://zeminlin.github.io/2016/07/25/%E5%9F%BA%E4%BA%8Eshadowsocks%E7%9A%84%E6%89%A9%E5%B1%95%E4%BB%A5%E6%B5%8B%E8%AF%95%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    <id>http://zeminlin.github.io/2016/07/25/基于shadowsocks的扩展以测试科学上网/</id>
+    <published>2016-07-25T09:11:05.000Z</published>
+    <updated>2016-07-25T09:13:21.099Z</updated>
+    <content type="html"><![CDATA[<p><strong>起因</strong>：</p>
+<blockquote>
+<p><a href="https://getlantern.org/" target="_blank" rel="external">lantern</a> / <a href="https://github.com/getlantern/forum" target="_blank" rel="external">lantern-github</a> (须外网访问，<a href="http://lanterncn.cn/" target="_blank" rel="external">lantern_cn</a>不需要)要下载最新版本才能使用，而且每个月限制800M流量，查资料有时候不太方便</p>
+</blockquote>
+<hr>
+<p>个人科学上网史：<br><code>goagent</code> —&gt; <code>Host修改</code> —&gt; <code>VPN</code> —&gt; <code>shadowsocks</code> —&gt; <code>lantern</code> <strong>…</strong><br> 多数情况下是为了查阅相关资料，像<code>github</code>, <code>google</code>等，已习惯墙内网络，因为已能满足大部分需求。</p>
+<p><a href="https://github.com/shadowsocks/shadowsocks-windows/wiki/Shadowsocks-Windows-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E" target="_blank" rel="external">Shadowsocks</a> 是非常方便的科学上网工具,<br>基本使用方法：</p>
+<blockquote>
+<ul>
+<li>在任务栏找到 Shadowsocks 图标</li>
+<li>在 服务器 菜单添加多个服务器</li>
+<li>选择 启用系统代理 来启用系统代理。请禁用浏览器里的代理插件，或把它们设置为使用系统代理。</li>
+<li>除了设为系统代理，你也可以直接自己配置浏览器代理。在 SwitchyOmega 中把代理设置为 SOCKS5 或 HTTP 的 127.0.0.1:1080。这个 1080 端口可以在服务器设置中设置。</li>
+</ul>
+</blockquote>
+<p>想到 <a href="http://www.ishadowsocks.org" target="_blank" rel="external">ishadowsocks</a> 有提供实验账号，且shadowsocks for Windows开放源代码，于是想在V2.5.8主界面基础上添加按钮，一键获取实验账号，用于个人测试科学上网，改善网络。</p>
+<p><strong>说明</strong>：</p>
+<blockquote>
+<ul>
+<li>由于添加的代码中使用了硬编码，当iss的地址或者页面修改后，工具不能正常获取实验账号</li>
+<li>代码已上传到<code>https://github.com/zeminlin/shadowsocks_windows_extend</code>, 可自行<code>pull</code>下来编译</li>
+<li>仅作为个人使用的测试使用，只经过自己的台式机测试(Win10企业版 64位)，未经过大量测试，不保证能正确运行，另外，不打算实现定时获取实验账号</li>
+<li>由于使用的人比较多，可能速度比较慢，仅满足基于日常查阅资料</li>
+</ul>
+</blockquote>
+<p>再次感谢 <a href="http://www.ishadowsocks.org" target="_blank" rel="external">ishadowsocks</a> 提供的实验账号！如有侵权之类的，请联系本人删除相关资料, 谢谢。</p>
+<hr>
+<blockquote>
+<p>Tips:可以到 <code>http://pan.baidu.com/s/1hspuj4K</code> 下载，提取密码为<code>gcm9</code>，当然啦，自己 <code>pull</code> 下来编译也挺方便的  </p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><strong>起因</strong>：</p>
+<blockquote>
+<p><a href="https://getlantern.org/" target="_blank" rel="external">lantern</a> / <a href="https://]]>
+    </summary>
+    
+      <category term="shadowsocks" scheme="http://zeminlin.github.io/tags/shadowsocks/"/>
+    
+      <category term="科学上网" scheme="http://zeminlin.github.io/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[MyFirstPage]]></title>
+    <link href="http://zeminlin.github.io/2015/08/09/MyFirstPage/"/>
+    <id>http://zeminlin.github.io/2015/08/09/MyFirstPage/</id>
+    <published>2015-08-09T02:48:50.000Z</published>
+    <updated>2015-08-09T02:50:32.618Z</updated>
+    <content type="html"><![CDATA[<p>Hello World, <code>我</code>的第一个页面！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Hello World, <code>我</code>的第一个页面！</p>
+]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://zeminlin.github.io/2015/07/29/hello-world/"/>
+    <id>http://zeminlin.github.io/2015/07/29/hello-world/</id>
+    <published>2015-07-28T16:29:21.446Z</published>
+    <updated>2015-07-28T16:29:21.446Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
+    </summary>
+    
+  </entry>
+  
+</feed>
