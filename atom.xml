@@ -5,7 +5,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://zeminlin.github.io//"/>
-  <updated>2016-07-25T09:13:21.099Z</updated>
+  <updated>2016-08-07T04:03:40.020Z</updated>
   <id>http://zeminlin.github.io//</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[C#生成CRC8检验码]]></title>
+    <link href="http://zeminlin.github.io/2016/08/07/C-%E7%94%9F%E6%88%90CRC8%E6%A3%80%E9%AA%8C%E7%A0%81/"/>
+    <id>http://zeminlin.github.io/2016/08/07/C-生成CRC8检验码/</id>
+    <published>2016-08-07T04:00:51.000Z</published>
+    <updated>2016-08-07T04:03:40.020Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>循环冗余校验(Cyclic Redundancy Check, CRC)是一种根据网络数据包或电脑文件等数据产生简短固定位数校验码的一种散列函数，主要用来检测或校验数据传输或者保存后可能出现的错误。它是利用除法及余数的原理来作错误侦测的。</p>
+</blockquote>
+<p>在与硬件设备交互过程中，通常会有一定的通讯指令协议，<br>完整指令码 = <strong>包头 + 指令 + 校验码</strong>， 其中应答消息的最后一位也是校验码，如CRC8， CRC16，CRC32。<br>根据CRC算法，将 <code>指令</code> 通过 <code>多项式</code> 计算得出校验码</p>
+<p>C#生成CRC8代码实现(参考网络)如下：</p>
+<h5 id="方法一：查表法">方法一：查表法</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class CRC8&#10;   &#123;&#10;       private byte[] CRC8Table = new byte[] &#123;&#10;       0,94,188,226,97,63,221,131,194,156,126,32,163,253,31,65,&#10;       157,195,33,127,252,162,64,30, 95,1,227,189,62,96,130,220,&#10;       35,125,159,193,66,28,254,160,225,191,93,3,128,222,60,98,&#10;       190,224,2,92,223,129,99,61,124,34,192,158,29,67,161,255,&#10;       70,24,250,164,39,121,155,197,132,218,56,102,229,187,89,7,&#10;       219,133,103,57,186,228,6,88,25,71,165,251,120,38,196,154,&#10;       101,59,217,135,4,90,184,230,167,249,27,69,198,152,122,36,&#10;       248,166,68,26,153,199,37,123,58,100,134,216,91,5,231,185,&#10;       140,210,48,110,237,179,81,15,78,16,242,172,47,113,147,205,&#10;       17,79,173,243,112,46,204,146,211,141,111,49,178,236,14,80,&#10;       175,241,19,77,206,144,114,44,109,51,209,143,12,82,176,238,&#10;       50,108,142,208,83,13,239,177,240,174,76,18,145,207,45,115,&#10;       202,148,118,40,171,245,23,73,8,86,180,234,105,55,213,139,&#10;       87,9,235,181,54,104,138,212,149,203, 41,119,244,170,72,22,&#10;       233,183,85,11,136,214,52,106,43,117,151,201,74,20,246,168,&#10;       116,42,200,150,21,75,169,247,182,232,10,84,215,137,107,53 &#125;;&#10;&#10;       public byte CRC(byte[] buffer)&#10;       &#123;&#10;           return CRC(buffer, 0, buffer.Length);&#10;       &#125;&#10;&#10;       public byte CRC(byte[] buffer, int off, int len)&#10;       &#123;&#10;           byte crc = 0;&#10;           if (buffer == null)&#10;           &#123;&#10;               throw new ArgumentNullException(&#34;buffer&#34;);&#10;           &#125;&#10;           if (off &#60; 0 || len &#60; 0 || off + len &#62; buffer.Length)&#10;           &#123;&#10;               throw new ArgumentOutOfRangeException();&#10;           &#125;&#10;&#10;           for (int i = off; i &#60; len; i++)&#10;           &#123;&#10;               crc = CRC8Table[crc ^ buffer[i]];&#10;           &#125;&#10;           return crc;&#10;       &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="方法二">方法二</h5><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">byte</span> <span class="title">CRC8</span><span class="params">(<span class="keyword">byte</span>[] buffer)</span></span><br><span class="line">      </span>&#123;</span><br><span class="line">          <span class="keyword">byte</span> crc = <span class="number">0</span>;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; buffer.Length; j++)</span><br><span class="line">          &#123;</span><br><span class="line">              crc ^= buffer[j];</span><br><span class="line">              <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++)</span><br><span class="line">              &#123;</span><br><span class="line">                  <span class="keyword">if</span> ((crc &amp; <span class="number">0x01</span>) != <span class="number">0</span>)</span><br><span class="line">                  &#123;</span><br><span class="line">                      crc &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">                      crc ^= <span class="number">0x8c</span>;	<span class="comment">//0x8c是多项式</span></span><br><span class="line">                  &#125;</span><br><span class="line">                  <span class="keyword">else</span></span><br><span class="line">                  &#123;</span><br><span class="line">                      crc &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">return</span> crc;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<p>参考资料：</p>
+<blockquote>
+<ol>
+<li><a href="http://note.jhpeng.com/CSharp_CheckSum/" target="_blank" rel="external">C# 取得 CRC8 CRC16 CRC32</a></li>
+<li><a href="http://sanity-free.org/146/crc8_implementation_in_csharp.html" target="_blank" rel="external">A CRC8 implementation in C#</a></li>
+</ol>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>循环冗余校验(Cyclic Redundancy Check, CRC)是一种根据网络数据包或电脑文件等数据产生简短固定位数校验码的一种散列函数，主要用来检测或校验数据传输或者保存后可能出现的错误。它是利用除法及余数的原理来作错误侦测的。</p>
+]]>
+    </summary>
+    
+      <category term="C#" scheme="http://zeminlin.github.io/tags/C/"/>
+    
+      <category term="CRC" scheme="http://zeminlin.github.io/tags/CRC/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[基于shadowsocks的扩展以测试科学上网]]></title>

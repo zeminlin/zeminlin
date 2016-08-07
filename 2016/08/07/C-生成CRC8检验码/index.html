@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>zemin&#39;s blog</title>
+  <title>C#生成CRC8检验码 | zemin&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zemin's blog">
-<meta property="og:url" content="http://zeminlin.github.io/index.html">
+  <meta name="description" content="循环冗余校验(Cyclic Redundancy Check, CRC)是一种根据网络数据包或电脑文件等数据产生简短固定位数校验码的一种散列函数，主要用来检测或校验数据传输或者保存后可能出现的错误。它是利用除法及余数的原理来作错误侦测的。
+
+在与硬件设备交互过程中，通常会有一定的通讯指令协议，完整指令码 = 包头 + 指令 + 校验码， 其中应答消息的最后一位也是校验码，如CRC8， CRC16，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#生成CRC8检验码">
+<meta property="og:url" content="http://zeminlin.github.io/2016/08/07/C-生成CRC8检验码/index.html">
 <meta property="og:site_name" content="zemin's blog">
-<meta property="og:description">
+<meta property="og:description" content="循环冗余校验(Cyclic Redundancy Check, CRC)是一种根据网络数据包或电脑文件等数据产生简短固定位数校验码的一种散列函数，主要用来检测或校验数据传输或者保存后可能出现的错误。它是利用除法及余数的原理来作错误侦测的。
+
+在与硬件设备交互过程中，通常会有一定的通讯指令协议，完整指令码 = 包头 + 指令 + 校验码， 其中应答消息的最后一位也是校验码，如CRC8， CRC16，">
+<meta property="og:updated_time" content="2016-08-07T04:03:40.020Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zemin's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="C#生成CRC8检验码">
+<meta name="twitter:description" content="循环冗余校验(Cyclic Redundancy Check, CRC)是一种根据网络数据包或电脑文件等数据产生简短固定位数校验码的一种散列函数，主要用来检测或校验数据传输或者保存后可能出现的错误。它是利用除法及余数的原理来作错误侦测的。
+
+在与硬件设备交互过程中，通常会有一定的通讯指令协议，完整指令码 = 包头 + 指令 + 校验码， 其中应答消息的最后一位也是校验码，如CRC8， CRC16，">
   
     <link rel="alternative" href="/atom.xml" title="zemin&#39;s blog" type="application/atom+xml">
   
@@ -180,9 +187,7 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-C-生成CRC8检验码" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-C-生成CRC8检验码" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/08/07/C-生成CRC8检验码/" class="article-date">
@@ -198,12 +203,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/07/C-生成CRC8检验码/">C#生成CRC8检验码</a>
+    <h1 class="article-title" itemprop="name">
+      C#生成CRC8检验码
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CRC/">CRC</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -226,225 +242,62 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CRC/">CRC</a></li></ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/07/25/基于shadowsocks的扩展以测试科学上网/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于shadowsocks的扩展以测试科学上网</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
-
-
-
-
-  
-    <article id="post-基于shadowsocks的扩展以测试科学上网" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/25/基于shadowsocks的扩展以测试科学上网/" class="article-date">
-  	<time datetime="2016-07-25T09:11:05.000Z" itemprop="datePublished">2016-07-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/25/基于shadowsocks的扩展以测试科学上网/">基于shadowsocks的扩展以测试科学上网</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>起因</strong>：</p>
-<blockquote>
-<p><a href="https://getlantern.org/" target="_blank" rel="external">lantern</a> / <a href="https://github.com/getlantern/forum" target="_blank" rel="external">lantern-github</a> (须外网访问，<a href="http://lanterncn.cn/" target="_blank" rel="external">lantern_cn</a>不需要)要下载最新版本才能使用，而且每个月限制800M流量，查资料有时候不太方便</p>
-</blockquote>
-<hr>
-<p>个人科学上网史：<br><code>goagent</code> —&gt; <code>Host修改</code> —&gt; <code>VPN</code> —&gt; <code>shadowsocks</code> —&gt; <code>lantern</code> <strong>…</strong><br> 多数情况下是为了查阅相关资料，像<code>github</code>, <code>google</code>等，已习惯墙内网络，因为已能满足大部分需求。</p>
-<p><a href="https://github.com/shadowsocks/shadowsocks-windows/wiki/Shadowsocks-Windows-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E" target="_blank" rel="external">Shadowsocks</a> 是非常方便的科学上网工具,<br>基本使用方法：</p>
-<blockquote>
-<ul>
-<li>在任务栏找到 Shadowsocks 图标</li>
-<li>在 服务器 菜单添加多个服务器</li>
-<li>选择 启用系统代理 来启用系统代理。请禁用浏览器里的代理插件，或把它们设置为使用系统代理。</li>
-<li>除了设为系统代理，你也可以直接自己配置浏览器代理。在 SwitchyOmega 中把代理设置为 SOCKS5 或 HTTP 的 127.0.0.1:1080。这个 1080 端口可以在服务器设置中设置。</li>
-</ul>
-</blockquote>
-<p>想到 <a href="http://www.ishadowsocks.org" target="_blank" rel="external">ishadowsocks</a> 有提供实验账号，且shadowsocks for Windows开放源代码，于是想在V2.5.8主界面基础上添加按钮，一键获取实验账号，用于个人测试科学上网，改善网络。</p>
-<p><strong>说明</strong>：</p>
-<blockquote>
-<ul>
-<li>由于添加的代码中使用了硬编码，当iss的地址或者页面修改后，工具不能正常获取实验账号</li>
-<li>代码已上传到<code>https://github.com/zeminlin/shadowsocks_windows_extend</code>, 可自行<code>pull</code>下来编译</li>
-<li>仅作为个人使用的测试使用，只经过自己的台式机测试(Win10企业版 64位)，未经过大量测试，不保证能正确运行，另外，不打算实现定时获取实验账号</li>
-<li>由于使用的人比较多，可能速度比较慢，仅满足基于日常查阅资料</li>
-</ul>
-</blockquote>
-<p>再次感谢 <a href="http://www.ishadowsocks.org" target="_blank" rel="external">ishadowsocks</a> 提供的实验账号！如有侵权之类的，请联系本人删除相关资料, 谢谢。</p>
-<hr>
-<blockquote>
-<p>Tips:可以到 <code>http://pan.baidu.com/s/1hspuj4K</code> 下载，提取密码为<code>gcm9</code>，当然啦，自己 <code>pull</code> 下来编译也挺方便的  </p>
-</blockquote>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/科学上网/">科学上网</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="C-生成CRC8检验码" data-title="C#生成CRC8检验码" data-url="http://zeminlin.github.io/2016/08/07/C-生成CRC8检验码/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"zmblog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
 
-
-
-
-  
-    <article id="post-MyFirstPage" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/09/MyFirstPage/" class="article-date">
-  	<time datetime="2015-08-09T02:48:50.000Z" itemprop="datePublished">2015-08-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/09/MyFirstPage/">MyFirstPage</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Hello World, <code>我</code>的第一个页面！</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/07/29/hello-world/" class="article-date">
-  	<time datetime="2015-07-28T16:29:21.446Z" itemprop="datePublished">2015-07-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/29/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -468,8 +321,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
